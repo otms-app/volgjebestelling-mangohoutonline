@@ -32,21 +32,20 @@
   </div>
 
   <!-- v-if and v-else SearchFormSteps/OrderDetails -->
-
-  <!-- Footer -->
-
-  <div class="footer border-top">
-    <div class="text-center">
-      <p class="footer-p">
-        &copy; {{ new Date().getFullYear() }} Mangohoutonline<br />Aan de
-        informatie op onze website kunnen geen rechten worden ontleend
-      </p>
-    </div>
-  </div>
+  <!-- <SearchFormSteps /> -->
+  <OrderDetails />
 </template>
 
 <script>
-export default {};
+import SearchFormSteps from '../components/searchformsteps.vue';
+import OrderDetails from '../components/orderdetails.vue';
+
+export default {
+  components: {
+    SearchFormSteps,
+    OrderDetails,
+  },
+};
 </script>
 
 <style>
@@ -135,17 +134,5 @@ export default {};
 .centered-image {
   max-width: 100%;
   max-height: 100%;
-}
-
-/* Footer */
-
-.footer {
-  margin-top: 15px;
-  font-size: 11px;
-  font-family: sans-serif;
-}
-
-.footer-p {
-  margin-top: 15px;
 }
 </style>

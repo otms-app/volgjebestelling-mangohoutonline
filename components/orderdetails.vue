@@ -1,10 +1,13 @@
 <template>
-  <!-- Footer -->
-  <div class="footer border-top">
-    <div class="text-center">
-      <p class="footer-p">
-        &copy; {{ new Date().getFullYear() }} Mangohoutonline<br />Aan de
-        informatie op onze website kunnen geen rechten worden ontleend
+  <div class="container col-md-12">
+    <div class="form-body">
+      <h2 class="halloklant">Hallo {{}},</h2>
+      <p class="dankjewel">
+        Bedankt voor je bestelling bij Mangohoutonline. We doen ons uiterste
+        best om je bestelling zo snel mogelijk bij je af te leveren. Hierbij
+        proberen we je zo goed mogelijk op de hoogte te houden van de status. Je
+        bestelling wordt geleverd op het moment dat alle producten op voorraad
+        zijn.
       </p>
     </div>
   </div>
@@ -17,13 +20,12 @@ export default {};
 </script>
 
 <style>
-.footer {
-  margin-top: 15px;
-  font-size: 11px;
-  font-family: sans-serif;
+.halloklant {
+  margin-bottom: 20px;
 }
 
-.footer-p {
-  margin-top: 15px;
+.dankjewel {
+  color: #777;
+  margin-bottom: 20px;
 }
 </style>
