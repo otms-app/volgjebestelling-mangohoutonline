@@ -121,14 +121,12 @@ export default {
       try {
         const response = await fetch(apiUrl);
         const data = await response.json();
-        console.log('Fetched Data:', data); // Log fetched data before assignment
+        console.log('Fetched Data:', fetchedData); // Log fetched data before assignment
         fetchedData.value = data;
       } catch (error) {
         // Handle any errors that occurred during the API call
       }
     };
-
-    provide('fetchedData', fetchedData);
 
     return {
       orderNumber,

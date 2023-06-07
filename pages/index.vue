@@ -32,11 +32,13 @@
   </div>
 
   <!-- v-if and v-else SearchFormSteps/OrderDetails -->
-  <!-- <SearchFormSteps /> -->
-  <OrderDetails />
+  <SearchFormSteps v-if="!fetchedData" @search="search" />
+  <OrderDetails v-else />
 </template>
 
 <script>
+import { ref, provide } from 'vue';
+
 import SearchFormSteps from '../components/searchformsteps.vue';
 import OrderDetails from '../components/orderdetails.vue';
 
