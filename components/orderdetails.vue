@@ -10,6 +10,24 @@
         zijn.
       </p>
     </div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th></th>
+          <th>Product</th>
+          <th>SKU</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="item in items" :key="item.sku">
+          <td><i class="fa fa-truck"></i></td>
+          <td>{{ item.sku }}</td>
+          <td>{{ item.name }}</td>
+          <td>{{ item.stock_status }}</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </template>
 
@@ -27,5 +45,10 @@ export default {};
 .dankjewel {
   color: #777;
   margin-bottom: 20px;
+}
+
+.td {
+  font-size: 14px;
+  color: #777;
 }
 </style>
