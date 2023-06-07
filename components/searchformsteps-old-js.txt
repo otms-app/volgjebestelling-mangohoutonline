@@ -1,0 +1,54 @@
+export default {
+  data() {
+    return {
+      order: '',
+      email: '',
+      isOrderInvalid: false,
+      isEmailInvalid: false,
+    };
+  },
+  methods: {
+    handleOrderInvalid(event) {
+      this.isOrderInvalid = true;
+      event.target.setCustomValidity('Vul een ordernummer in');
+    },
+    handleOrderInput(event) {
+      this.isOrderInvalid = false;
+      event.target.setCustomValidity('');
+    },
+    handleEmailInvalid(event) {
+      this.isEmailInvalid = true;
+      event.target.setCustomValidity('Vul een e-mailadres in');
+    },
+    handleEmailInput(event) {
+      this.isEmailInvalid = false;
+      event.target.setCustomValidity('');
+    },
+    search() {
+      // Check if the order number and email are entered
+      if (this.order && this.email) {
+        // Construct the API URL with the order number and email
+        const apiUrl = `https://public.jongstratransport.nl/order_tracking?reference=${encodeURIComponent(
+          this.order
+        )}&email=${encodeURIComponent(this.email)}`;
+
+        // Perform the API request
+        fetch(apiUrl)
+          .then((response) => response.json())
+          .then((data) => {
+            // Log the response data to the console
+            console.log(data);
+
+            // Further process the response data as needed (e.g., update the UI, store it in Vuex, etc.)
+          })
+          .catch((error) => {
+            console.error('Error:', error);
+            // Handle any errors that occur during the API request
+          });
+      } else {
+        // Handle case where the order number and/or email are not entered
+        console.log('Please enter the order number and email.');
+      }
+    },
+  },
+};
