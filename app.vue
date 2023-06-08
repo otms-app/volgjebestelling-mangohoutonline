@@ -1,8 +1,6 @@
 <template>
   <MainPage />
 
-  <!-- Footer -->
-
   <div class="footer border-top">
     <div class="text-center">
       <p class="footer-p">
@@ -26,8 +24,6 @@ export default {
 </script>
 
 <style>
-/* Footer */
-
 .footer {
   margin-top: 15px;
   font-size: 11px;
@@ -38,5 +34,3 @@ export default {
   margin-top: 15px;
 }
 </style>
-
-
